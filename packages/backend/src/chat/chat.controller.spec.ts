@@ -24,6 +24,12 @@ describe('Chat Controller', () => {
     res = httpMocks.createResponse();
   });
 
+  afterEach(async () => {
+    if (module) {
+      await module.close();
+    }
+  });
+
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
